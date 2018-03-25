@@ -1,0 +1,111 @@
+{
+	"id": "f16a60e7-4c6a-2e35-c42e-30c8e87ef683",
+	"name": "easy-notes",
+	"description": "",
+	"order": [
+		"8c30faf7-ab22-081a-16d4-ef493bca8d6e",
+		"64b59edc-9024-e25f-7ad9-b4a3d585daa1",
+		"6db3c5e9-68b1-c041-64d7-8c373c819e93"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1521982194750,
+	"owner": "3279288",
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "64b59edc-9024-e25f-7ad9-b4a3d585daa1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8095/api/notes",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "85f5cae8-70f9-40e3-9c28-b446fc644b25",
+						"type": "text/javascript",
+						"exec": [
+							"var title = \"test title {{$timestamp}}\";",
+							"postman.setEnvironmentVariable(\"title\",title);",
+							"",
+							"var content = \"test content {{$timestamp}}\";",
+							"postman.setEnvironmentVariable(\"content\",content);"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1521999024259,
+			"name": "post create note",
+			"description": "",
+			"collectionId": "f16a60e7-4c6a-2e35-c42e-30c8e87ef683",
+			"responses": [],
+			"preRequestScript": "var title = \"test title {{$timestamp}}\";\npostman.setEnvironmentVariable(\"title\",title);\n\nvar content = \"test content {{$timestamp}}\";\npostman.setEnvironmentVariable(\"content\",content);",
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"title\": \"{{title}}\",\n\t\"content\": \"{{content}}\"\n}\n\t"
+		},
+		{
+			"id": "6db3c5e9-68b1-c041-64d7-8c373c819e93",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8095/api/notes/1",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1522001206037,
+			"name": "get single note",
+			"description": "",
+			"collectionId": "f16a60e7-4c6a-2e35-c42e-30c8e87ef683",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8c30faf7-ab22-081a-16d4-ef493bca8d6e",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8095/api/notes",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1522001120443,
+			"name": "get all notes",
+			"description": "",
+			"collectionId": "f16a60e7-4c6a-2e35-c42e-30c8e87ef683",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}
