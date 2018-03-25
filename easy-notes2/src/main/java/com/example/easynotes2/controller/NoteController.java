@@ -21,10 +21,17 @@ public class NoteController {
 	public List<Note> getAllNotes() {
 		return noteRepository.findAll();
 	}
-	
+
 	// Create a new Note
 	@PostMapping("/notes")
 	public Note createNote(@Valid @RequestBody Note note) {
-	    return noteRepository.save(note);
+		return noteRepository.save(note);
+	}
+
+	// Get a single note
+	@GetMapping("/notes/{id}")
+	public Note getNoteById(@PathVariable(value = "id") Long noteId) {
+		return noteRepository.findById(noteId)
+				.orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
 	}
 }

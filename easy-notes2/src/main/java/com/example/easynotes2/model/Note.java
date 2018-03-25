@@ -2,6 +2,8 @@ package com.example.easynotes2.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -66,19 +68,19 @@ public class Note implements Serializable {
 	public void setContent(String content) {
 		this.content = content;
 	}
-
+	@JsonIgnore
 	public Date getCreatedAt() {
 		return createdAt;
 	}
-
+	@JsonProperty
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-
+	@JsonIgnore
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
-
+	@JsonProperty
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
