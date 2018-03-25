@@ -21,4 +21,10 @@ public class NoteController {
 	public List<Note> getAllNotes() {
 		return noteRepository.findAll();
 	}
+	
+	// Create a new Note
+	@PostMapping("/notes")
+	public Note createNote(@Valid @RequestBody Note note) {
+	    return noteRepository.save(note);
+	}
 }
