@@ -152,6 +152,28 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "delete note by id ",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8095/api/notes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"notes",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

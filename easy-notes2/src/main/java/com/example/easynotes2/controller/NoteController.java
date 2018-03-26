@@ -47,4 +47,14 @@ public class NoteController {
 		Note updatedNote = noteRepository.save(note);
 		return updatedNote;
 	}
+	// Delete a Note
+	@DeleteMapping("/notes/{id}")
+	public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long noteId) {
+	    Note note = noteRepository.findById(noteId)
+	            .orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
+
+	    noteRepository.delete(note);
+
+	    return ResponseEntity.ok().build();
+	}
 }
